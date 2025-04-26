@@ -1,4 +1,5 @@
-#include "./main_design/main_screen.h"
+#include "main_screen.h"
+#include "figures.h"
 
 int main() {
     initscr();             // инициализация ncurses
@@ -9,8 +10,8 @@ int main() {
     int WIDTH, HEIGHT;
     getmaxyx(stdscr, HEIGHT, WIDTH);
     
-    print_main_grid(WIDTH, HEIGHT);
-    
+    print_main_grid(WIDTH, HEIGHT); 
+
     endwin();
     return 0;
 }
