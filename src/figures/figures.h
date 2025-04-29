@@ -2,7 +2,7 @@
 #define FIGURES_H
 
 #include <string.h>
-#include "../../constants/constants.h"
+#include "../../include/config.h"
 #include "../matrix/matrix.h"
 
 // Определение структуры куба
@@ -14,6 +14,8 @@ typedef struct {
 } CUBE;
 
 
-int create_cube(CUBE** cube, float size, char display_char);
+int create_cube(CUBE** cube, 
+		float  size, 
+		char   display_char);
 
 #endif

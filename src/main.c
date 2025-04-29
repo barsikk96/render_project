@@ -1,4 +1,4 @@
-#include "main_screen.h"
+#include "io/main_screen.h"
 #include "figures.h"
 
 int main() {
@@ -9,8 +9,13 @@ int main() {
 
     int WIDTH, HEIGHT;
     getmaxyx(stdscr, HEIGHT, WIDTH);
-    
+
     print_main_grid(WIDTH, HEIGHT); 
+
+    while(1) {
+	refresh();
+	sleep(0.02);
+    }
 
     endwin();
     return 0;

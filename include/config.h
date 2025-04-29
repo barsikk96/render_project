@@ -1,8 +1,13 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#define GRID_SPACING 10
+// Размер сетки
+#define GRID_SPACING 5
+// Размер матрицы фигуры
 #define SQ_MAT_SIZE 4
+
+// Угол поворота
+#define ROTATE_ANGLE 2.0f
 
 #include <stdio.h>
 
@@ -15,5 +20,12 @@ enum {
     // Не удалось выделить память
     ERR_ALLOCATION = 1
 };
+
+// Типы событий
+enum {
+    ROTATE
+}
+
+
 
 #endif
