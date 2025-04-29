@@ -16,18 +16,21 @@ int identity_matrix(Mat4* matrix) {
 }
 
 // Матрица поворота по Оси X
-int rotation_x_matrix(Mat4* matrix, 
-		      char  button) {
+int rotation_x_matrix(Mat4*  matrix, 
+		      char   button,
+		      float* angle_x) {
     int flag_error = SUCCESS;
     
     if(!matrix)
 	flag_error = ERR_ALLOCATION;
     else {
-	float angle;
+	float step = ROTATE_ANGLE * (M_PI / 180.0f);
+	
 	if(button == KEY_UP)
-	    angle = 
+	    angle_x += step;
 	if(button == KEY_DOWN)
-	    angle = //дописать угол
+	    angle_x -= step;
+	
 	float c = cos(angle);
 	float s = sin(angle);
 	matrix->elements = {
@@ -123,9 +126,10 @@ int multiply_matrices(const Mat4* A,
 }
 
 
-void handleCases(int   event_type, 
-		 char  button,
-		 Mat4* processed_matrix) {
+void handleCases(int    event_type, 
+		 char   button,
+		 Mat4*  processed_matrix,
+		 float* angle) {
     size_t size_events = sizeof(events) / 
 	    		 sizeof(events[0]);
     char flag_found = 0;
@@ -134,7 +138,7 @@ void handleCases(int   event_type,
 	       handler++) {
 	if(events[handler].event_type == event_type &&
 	   events[handler].button     == button) {
-	    events[handler].handler(processed_matrix, button);
+	    events[handler].handler(processed_matrix, button, angle);
 	    flag_found = 1;
 	}
     }

@@ -6,10 +6,16 @@
 // Размер матрицы фигуры
 #define SQ_MAT_SIZE 4
 
+
+
 // Угол поворота
 #define ROTATE_ANGLE 2.0f
 
 #include <stdio.h>
+#include <string.h>
+#include <ncurses.h>
+#include <unistd.h>
+#include <math.h>
 
 typedef struct { float x, y, z; } Vec3;
 

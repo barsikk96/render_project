@@ -1,7 +1,6 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-#include <string.h>
 #include "../../include/config.h"
 
 // Определение структуры квадратной матрицы
@@ -9,7 +8,7 @@ typedef struct {
     float elements[SQ_MAT_SIZE][SQ_MAT_SIZE]; 
 } Mat4;
 
-typedef int (*HandlerFunc)(Mat4*, char);
+typedef int (*HandlerFunc)(Mat4*, char, float*);
 
 typedef struct {
     int  event_type;
