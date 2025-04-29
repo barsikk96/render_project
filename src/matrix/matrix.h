@@ -8,27 +8,32 @@ typedef struct {
     float elements[SQ_MAT_SIZE][SQ_MAT_SIZE]; 
 } Mat4;
 
-typedef int (*HandlerFunc)(Mat4*, char, float*);
+// Инициализация единичной матрицы
+int identity_matrix(Mat4* matrix);
 
-typedef struct {
-    int  event_type;
-    char button;
-    HandlerFunc handler;
-} CaseHandler;
+// Матрица поворота по Оси X
+int rotation_x_matrix(Mat4*  matrix, 
+                      int    button,
+                      float* angle_x);
 
-CaseHandler events[] = {
-    {ROTATE, KEY_UP,    rotation_x_matrix}, 
-    {ROTATE, KEY_DOWN,  rotation_x_matrix}, 
-    {ROTATE, KEY_LEFT,  rotation_y_matrix}, 
-    {ROTATE, KEY_RIGHT, rotation_y_matrix}
-};
+// Матрица поворота по Оси Y
+int rotation_y_matrix(Mat4*  matrix, 
+                      int    button,
+                      float* angle_y);
 
-void identity_matrix(Mat4* matrix);
+// Матрица поворота по Оси Z
+int rotation_z_matrix(Mat4*  matrix, 
+                      int    button,
+                      float* angle_z);
 
-int  multiply_matrices(const Mat4* A, 
-		       const Mat4* B, 
-		       	     Mat4* res);
+// Умножение матриц
+int multiply_matrices(const Mat4* A, 
+		      const Mat4* B, 
+		       	    Mat4* res);
 
-//ДОПИСАТЬ ВСЕ ФУНКЦИИ ИЗ СИ ФАЙЛА
+// Умножение матрицы на вектор
+int mat4_mul_vec3(Mat4* matrix,
+		  Vec3* vector,
+		  Vec3* res_v);
 
 #endif

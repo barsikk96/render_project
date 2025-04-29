@@ -4,8 +4,9 @@
 #include "../../include/config.h"
 #include "../matrix/matrix.h"
 
+// Определение структуры зоны трансформации
 typedef struct {
-    Mat4  tranform_m;
+    Mat4  t_matrix;
     float angle_x;
     float angle_y;
     float angle_z;
@@ -16,13 +17,14 @@ typedef struct {
     Vec3       vertices[8];
     int        edges[12][2];
     char       edge_char;
-    TRANSFORM* transform_zone;
+    TRANSFORM* t_zone;
 } CUBE;
 
-
-
+// Создание куба
 int create_cube(CUBE** cube, 
 		float  size, 
 		char   display_char);
+
+void destroy_cube(CUBE* cube);
 
 #endif

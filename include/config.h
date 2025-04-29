@@ -1,22 +1,27 @@
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#ifndef CONFIG_H
+#define CONFIG_H
 
-// Размер сетки
-#define GRID_SPACING 5
-// Размер матрицы фигуры
-#define SQ_MAT_SIZE 4
-
-
-
-// Угол поворота
-#define ROTATE_ANGLE 2.0f
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
 #include <stdio.h>
 #include <string.h>
 #include <ncurses.h>
 #include <unistd.h>
 #include <math.h>
+#include <stdlib.h>
 
+// Размер сетки
+#define GRID_SPACING 5
+
+// Размер матрицы фигуры
+#define SQ_MAT_SIZE 4
+
+// Угол поворота
+#define ROTATE_ANGLE 2.0f
+
+// Определение вектора
 typedef struct { float x, y, z; } Vec3;
 
 // Коды ошибок
@@ -30,7 +35,7 @@ enum {
 // Типы событий
 enum {
     ROTATE
-}
+};
 
 
 
