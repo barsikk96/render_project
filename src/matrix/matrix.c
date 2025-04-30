@@ -138,6 +138,7 @@ int multiply_matrices(const Mat4* A,
     return flag_error;
 }
 
+// Умножение квадратной матрицы на вектор из трех элементов
 int mat4_mul_vec3(Mat4* matrix, 
 		  Vec3* vector, 
 		  Vec3* res_v) {

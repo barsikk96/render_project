@@ -10,7 +10,7 @@ typedef int (*HandlerFunc)(Mat4*, int, float*);
 // Определение кейса для обработчика событий
 typedef struct {
     int  event_type;
-    int button;
+    int  button;
     HandlerFunc handler;
 } CaseHandler;
 

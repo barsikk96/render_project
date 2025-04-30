@@ -25,6 +25,7 @@ int create_cube(CUBE** cube,
 		float  size, 
 		char   display_char);
 
+// Очистка структуры куба
 void destroy_cube(CUBE* cube);
 
 #endif
